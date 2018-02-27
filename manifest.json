@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "MyBook books exporter",
+    "description": "This extension export books from mybook.ru",
+    "version": "0.4",
+    "icons": {
+    	"48": "img/icon64.png"
+    },
+    "content_scripts": [
+        {"js": ["/js/zip.js/zip.js", "/js/zip.js/zip-ext.js",
+            "/js/zip.js/z-worker.js", "/js/zip.js/inflate.js", "/js/zip.js/deflate.js", "js/content.js"], "matches": ["*://mybook.ru/*", "*://m.mybook.ru/*"], "all_frames":true}
+    ],
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "*://mybook.ru/*",
+        "*://m.mybook.ru/*"
+    ],
+    "web_accessible_resources" : ["/img/download.png","/img/down-arrow.png", "/img/ajax-loader.gif", "/img/zip.gif"]
+
+}
